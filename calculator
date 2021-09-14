@@ -1,0 +1,50 @@
+/*
+From the code below you can see that I have imported the “iostream” header to allow for user input and output. I have used the “using namespace std” to define
+the scope. I have chosen to create the variables of “oper” to represent the operator, and “num1” and “num2” to represent the 
+user input numbers. The function “cout” outputs data to the user, and “cin” takes input from the user. With that in mind the program takes operand input from 
+the user and moves on to the control structure portion of the code. For this I have chosen “switch-case” over “if-else”.
+*/
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+char oper;
+float num1, num2;
+
+cout << "Enter an opererator (+, -, *, /): ";
+cin >> oper;
+
+cout << "Enter two operands: ";
+
+cin >> num1 >> num2;
+
+// Control structure
+switch (oper)
+{
+case '+':
+cout << num1 + num2 << endl;
+break;
+
+case '-':
+cout << num1 - num2 << endl;
+break;
+
+case '*':
+cout << num1 * num2 << endl;
+break;
+
+case '/':
+cout << num1 / num2 << endl;
+break;
+
+default:
+// Break case - If opererator is other than (+, -, *, /)
+cout << "Error! Please input a correct operator (+, -, *, /)";
+break;
+}
+
+system("PAUSE");
+return 0;
+}

@@ -1,0 +1,49 @@
+/*
+Nicknamed “The Golden Ratio,” the Fibonacci sequence is a series of numbers in which the
+current number equals the sum of the two numbers before it. If you were to throw this into
+a set, an example would be [0, 1, 1, 2, 3, 5, 8, 13]. For the program itself,  it will take user
+input as to how many calculated terms are requested, but use an example of twenty.
+The variables “t1” and “t2” are defaulted to 0 and 1 respectively as we know those 
+will be the fist two terms if printing the full sequence. 
+*/
+
+
+// Input and output header
+#include <iostream>
+
+// Ease of header inclusion
+using namespace std;
+
+// Being main program
+int main() {
+    // Create variables: n = user defined, t1 = first number of seq,
+    // t2 = second number of seq, nextTerm = next number of seq
+    int n, t1 = 0, t2 = 1, nextTerm = 0;
+
+    // Request n number of terms from user
+    cout << "Enter the number of requested terms(e.g. 20): ";
+    cin >> n;
+
+    cout << "Fibonacci Sequence: ";
+
+
+    // Iterate through full sequence of terms
+    for (int i = 1; i <= n; i++) {
+        // Print first two terms
+        if (i == 1) {
+            cout << t1 << ", ";
+            continue;
+        }
+        if (i == 2) {
+            cout << t2 << ", ";
+            continue;
+        }
+        // Sum the first two terms to equal the next term
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+
+        cout << nextTerm << ", ";
+    }
+    return 0;
+}
